@@ -16,6 +16,7 @@ Antes de ejecutar este proyecto, asegúrate de tener instalado lo siguiente:
 
 ## Variables de entorno
 En case de querer usar otra base de datos y otro puerto, los pasos son los siguientes:
+
 Crear un archivo llamado .env al mismo nivel que la carpeta src que contendra lo siguiente:
 
 ```
