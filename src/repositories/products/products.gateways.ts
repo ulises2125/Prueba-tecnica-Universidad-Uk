@@ -54,8 +54,12 @@ export class ProductsGateway {
     return this.ProductModel.findByIdAndDelete(id).exec();
   }
 
-  findAll(): Promise<ProductEntity[]> {
-    return this.ProductModel.find().exec();
+  async findAll(): Promise<ProductEntity[]> {
+    const products = await this.ProductModel.find().exec();
+    if (products.length === 0) {
+      throw new NotFoundException('No hay productos disponibles');
+    }
+    return products;
   }
 
   async findOne(id: string) {
